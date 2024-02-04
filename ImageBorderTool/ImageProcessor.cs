@@ -48,10 +48,10 @@ namespace ImageBorderTool
                 int size = Math.Max(image.Width, image.Height);
 
                 //Remove +2's if you don't want the fine white line around the edges
-                using (Image<Rgba32> squareImage = new Image<Rgba32>(Configuration.Default, size + 2, size + 2, SixLabors.ImageSharp.Color.White))
+                using (Image<Rgba32> squareImage = new Image<Rgba32>(Configuration.Default, size + 12, size + 12, SixLabors.ImageSharp.Color.White))
                 {
-                    int x = (size - image.Width) / 2;
-                    int y = (size - image.Height) / 2;
+                    int x = (size + 12 - image.Width) / 2;
+                    int y = (size + 12 - image.Height) / 2;
 
                     squareImage.Mutate(ctx => ctx.DrawImage(image, new SixLabors.ImageSharp.Point(x, y), 1f));
                     if (outputSize != null)
