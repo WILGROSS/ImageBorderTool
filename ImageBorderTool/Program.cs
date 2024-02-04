@@ -6,7 +6,7 @@
         {
             if (args.Length > 0)
             {
-                var app = new App();
+                var app = new ImageProcessor();
                 app.Run(args);
             }
             else
